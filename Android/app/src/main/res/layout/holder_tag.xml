@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener"/>
+        <import type="com.cavss.porvalencia.model.map.TagDTO"/>
+
+        <variable
+            name="model"
+            type="com.cavss.porvalencia.model.map.TagDTO" />
+
+        <variable
+            name="listener"
+            type="OnViewHolderClickListener&lt;TagDTO&gt;" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:padding="2dp"
+        android:background="@drawable/backgroun_tag"
+        android:id="@+id/background_border"
+        android:onClick="@{() -> listener.onClick(model)}">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:id="@+id/background"
+            android:background="@drawable/backgroun_tag">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:scaleType="centerInside"
+                android:src="@{model.drawableImage}"
+                android:id="@+id/image"
+                android:importantForAccessibility="no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/image"
+                android:layout_centerVertical="true"
+                android:id="@+id/text"
+                android:text="@{model.localTitle}"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

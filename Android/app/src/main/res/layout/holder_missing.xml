@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener"/>
+        <import type="com.cavss.porvalencia.model.missing.MissingDTO"/>
+
+        <variable
+            name="model"
+            type="com.cavss.porvalencia.model.missing.MissingDTO" />
+
+        <variable
+            name="listener"
+            type="OnViewHolderClickListener&lt;MissingDTO&gt;" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:background="@drawable/backgroun_tag"
+        android:backgroundTint="?attr/mainThemeColourLight"
+        android:id="@+id/background_border"
+        android:onClick="@{() -> listener.onClick(model)}">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:padding="2dp"
+            android:scaleType="centerInside"
+            android:id="@+id/image"
+            android:importantForAccessibility="no"
+            app:imageURL="@{model.imageURL}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:missingName="@{model}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/state"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:missingState="@{model}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/date"
+            android:textSize="13sp"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            app:missingDate="@{model}"/>
+
+    </LinearLayout>
+</layout>

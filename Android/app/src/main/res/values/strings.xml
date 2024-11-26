@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">PorValencia</string>
+    <string name="bottomnavi_map">Mapa</string>
+    <string name="bottomnavi_missing">Desaparición</string>
+    <string name="bottomnavi_volunteer">Voluntariado</string>
+    <string name="tag_hospital">Hospital</string>
+    <string name="tag_food">Comida</string>
+    <string name="tag_bed">Refugio</string>
+    <string name="tab_grouping">자원봉사</string>
+    <string name="tab_donation">기부</string>
+    <string name="tag_helpme">Ayúdame</string>
+    <string name="missing_hint">Nombre del desaparecido</string>
+    <string name="missing_state_missing">Desaparecido</string>
+    <string name="missing_state_alive">Supervivencia</string>
+    <string name="missing_state_dead">Fallecido</string>
+    <string name="missing_state_current">Estado actual</string>
+</resources>

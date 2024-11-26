@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/fragment_map"
+        android:icon="@drawable/image_point"
+        android:title="@string/bottomnavi_map" />
+
+    <item
+        android:id="@+id/fragment_volunteer"
+        android:icon="@drawable/image_volunteer"
+        android:title="@string/bottomnavi_volunteer" />
+
+    <item
+        android:id="@+id/fragment_missing"
+        android:icon="@drawable/image_missing"
+        android:title="@string/bottomnavi_missing" />
+
+</menu>

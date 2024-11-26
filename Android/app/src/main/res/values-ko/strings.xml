@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PorValencia</string>
+    <string name="bottomnavi_map">지도</string>
+    <string name="bottomnavi_missing">실종자</string>
+    <string name="bottomnavi_volunteer">자원봉사</string>
+    <string name="tag_hospital">병원</string>
+    <string name="tag_food">배식소</string>
+    <string name="tag_bed">대피소</string>
+    <string name="tab_grouping">자원봉사</string>
+    <string name="tab_donation">기부</string>
+    <string name="tag_helpme">갇혔어요</string>
+    <string name="missing_hint">실종자 이름을 검색하세요</string>
+    <string name="missing_state_missing">실종</string>
+    <string name="missing_state_alive">생존</string>
+    <string name="missing_state_dead">사망</string>
+    <string name="missing_state_current">현재 상태</string>
+</resources>

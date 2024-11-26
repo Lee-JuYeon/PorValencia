@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PorValencia" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <item name="mainThemeColour">#2f4574</item> <!-- 메인컬러 -->
+        <item name="mainThemeColourLight">#98bad5</item> <!-- 메인컬러 밝은색 -->
+        <item name="bottomNaviTextColour">#ffffff</item> <!-- 바텀 네비게이션 텍스트 컬러 -->
+        <item name="backgroundColour">#000000</item>
+
+        <!-- 배경 색상 설정 -->
+        <item name="systemGray">#a7a7a9</item> <!-- 어두운 회색 -->
+
+    </style>
+</resources>

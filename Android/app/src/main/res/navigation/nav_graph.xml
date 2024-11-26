@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_map">
+
+    <fragment
+        android:id="@+id/fragment_map"
+        android:name="com.cavss.porvalencia.ui.screen.map.MapFragment"
+        android:layout="@layout/fragment_map"
+        android:label="@string/bottomnavi_map"/>
+
+    <fragment
+        android:id="@+id/fragment_volunteer"
+        android:name="com.cavss.porvalencia.ui.screen.volunteer.VolunteerFragment"
+        android:layout="@layout/fragment_volunteer"
+        android:label="@string/bottomnavi_volunteer"/>
+
+    <fragment
+        android:id="@+id/fragment_missing"
+        android:name="com.cavss.porvalencia.ui.screen.missing.MissingFragment"
+        android:layout="@layout/fragment_missing"
+        android:label="@string/bottomnavi_missing"/>
+
+
+</navigation>
