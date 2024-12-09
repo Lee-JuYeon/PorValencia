@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "801844529028",
+    "firebase_url": "https://porvalencia-92dcc-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "porvalencia-92dcc",
+    "storage_bucket": "porvalencia-92dcc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:801844529028:android:88f150aee676a4acc0bfd1",
+        "android_client_info": {
+          "package_name": "com.example.admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNMfXklH8-dg3mwubQLCapHUXbKqYi8dI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

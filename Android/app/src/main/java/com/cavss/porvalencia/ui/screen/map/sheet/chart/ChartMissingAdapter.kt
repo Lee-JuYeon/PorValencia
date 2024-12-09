@@ -4,12 +4,10 @@ import android.util.Log
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.cavss.porvalencia.model.map.MissingDTO
 import com.cavss.porvalencia.ui.custom.recyclerview.BaseDiffUtil
 import com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener
-import com.cavss.porvalencia.ui.screen.map.dialog.missinglist.MissingViewHolder
 
-class ChatMissingAdapter() : RecyclerView.Adapter<ChartMissingHolder>() {
+class ChartMissingAdapter() : RecyclerView.Adapter<ChartMissingHolder>() {
 
     private val items = ArrayList<ChartModel>()
     fun updateList(newItems : List<ChartModel>?){

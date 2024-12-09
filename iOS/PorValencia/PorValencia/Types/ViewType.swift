@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct ViewType: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
 
-#Preview {
-    ViewType()
+enum ViewType {
+    case Map
+    case List
 }

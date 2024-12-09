@@ -7,12 +7,30 @@
 
 import SwiftUI
 
-struct Instaview: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct InstaView: View {
+    
+    let id : String
+    
+    @Environment(\.colorScheme) var colorScheme // Access the current color scheme (light/dark mode)
 
-#Preview {
-    Instaview()
+    var body: some View {
+        HStack(alignment: .center) {
+            Image("image_insta")
+                .renderingMode(.template) // Enable tinting
+                .foregroundColor(colorScheme == .dark ? .white : .black) // Change color based on the mode
+            Button(action: {
+                var idChecker = id
+                if idChecker.first == "@" {
+                    idChecker.removeFirst()
+                }
+                
+                if let instaURL = URL(string: "https://www.instagram.com/\(idChecker)/") {
+                    UIApplication.shared.open(instaURL)
+                }
+            }) {
+                Text(id)
+                    .foregroundColor(.blue)
+            }
+        }
+    }
 }

@@ -7,12 +7,8 @@
 
 import SwiftUI
 
-struct ChipsModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    ChipsModel()
+struct ChipsModel : Hashable {
+    let uid: String
+    let englishTitle: String
+    let localTitle : String
 }

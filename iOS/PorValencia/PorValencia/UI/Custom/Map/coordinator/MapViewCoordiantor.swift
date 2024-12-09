@@ -10,10 +10,15 @@ import MapKit
 
 
 // MKMapViewDelegate를 구현하는 코디네이터 클래스
-class MapViewCoordiantor: NSObject, MKMapViewDelegate {
+class MapViewCoordinator: NSObject, MKMapViewDelegate {
     var parent: CustomMapViewRepresentable
-    
-    init(_ parent: CustomMapViewRepresentable) {
+    var tapAction: ((MarkerModel) -> Void) // Closure for handling tap events
+
+    init(
+        parent: CustomMapViewRepresentable,
+        tapAction: @escaping ((MarkerModel) -> Void)
+    ) {
+        self.tapAction = tapAction
         self.parent = parent
     }
 
@@ -31,11 +36,17 @@ class MapViewCoordiantor: NSObject, MKMapViewDelegate {
     // 마커 뷰 생성
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let customAnnotation = annotation as? MarkerAnnotation else { return nil }
-        return CustomMarkerView(
+
+        // Create the custom marker view and pass the tapAction closure
+        let markerView = CustomMarkerView(
             annotation: customAnnotation,
             reuseIdentifier: "CustomAnnotation",
-            model: customAnnotation.model
+            model: customAnnotation.model,
+            tapAction: { [self] model in
+                tapAction(model) // Execute the closure when tapped
+            }
         )
+        return markerView
     }
 
     /*
@@ -44,9 +55,9 @@ class MapViewCoordiantor: NSObject, MKMapViewDelegate {
      */
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let customView = view as? CustomMarkerView {
-            parent.ploggingVM.currentCollectingPlaceModel = customView.model
-            print("선택된 수거 장소: \(customView.model.title)")
+            parent.mapVM.currentHospitalModel?.uid = customView.model.uid
+            print("선택된 장소: \(customView.model.title)")
         }
     }
-
 }
+

@@ -4,48 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener"/>
+        <import type="com.cavss.porvalencia.ui.screen.map.sheet.chart.ChartModel"/>
 
+        <variable
+            name="model"
+            type="com.cavss.porvalencia.ui.screen.map.sheet.chart.ChartModel" />
+
+        <variable
+            name="listener"
+            type="OnViewHolderClickListener&lt;ChartModel&gt;" />
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
 
-        <EditText
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_alignParentTop="true"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:background="@drawable/backgroun_tag"
-            android:backgroundTint="?attr/leftShadowColour"
-            android:id="@+id/search"
-            android:hint="@string/missing_hint"
-            android:textSize="20sp"
-            android:textColor="@color/black"
+            android:layout_weight="2"
+            android:gravity="top|start"
+            android:text="@{model.title}"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="?attr/bottomNaviTextColour"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="top|start"
+            android:text="@{model.contents}"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
             android:textStyle="normal"
-            android:textAllCaps="false"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/search"
-            android:id="@+id/missingList"/>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="10dp"
-            android:id="@+id/add"
-            android:src="@drawable/sharp_add_black_36"
-            android:importantForAccessibility="no" />
-    </RelativeLayout>
+            android:textColor="?attr/bottomNaviTextColour"
+            android:textSize="15sp"/>
+    </LinearLayout>
 </layout>

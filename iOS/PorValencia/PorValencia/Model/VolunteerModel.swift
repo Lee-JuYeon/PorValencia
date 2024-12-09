@@ -7,12 +7,13 @@
 
 import SwiftUI
 
-struct VolunteerModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    VolunteerModel()
+struct VolunteerModel : Hashable {
+    var uid : String
+    var title : String
+    var purpose : String
+    var requirement : String
+    var leaderUID : String
+    var maxPeople : Int
+    var zone : String
+    var joinedPeoples : [String] // people uid
 }

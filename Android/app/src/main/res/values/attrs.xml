@@ -2,7 +2,11 @@
 <resources>
 
     <attr name="mainThemeColour" format="color" />
-    <attr name="mainThemeColourLight" format="color"/>
+    <attr name="leftShadowColour" format="color"/>
+    <attr name="rightShadowColour" format="color"/>
+
+    <attr name="textColour" format="color"/>
+
     <attr name="backgroundColour" format="color"/>
     <attr name="systemGray" format="color" />
     <attr name="bottomNaviTextColour" format="color"/>

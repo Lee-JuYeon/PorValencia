@@ -9,13 +9,16 @@ import SwiftUI
 import MapKit
 
 class CustomMarkerView: MKAnnotationView {
-    
-    var model: MarkerModel
 
-    init(annotation: MarkerAnnotation?, reuseIdentifier: String?, model: MarkerModel) {
+    var model: MarkerModel
+    var tapAction: ((MarkerModel) -> Void) // Closure for handling tap events
+
+    init(annotation: MarkerAnnotation?, reuseIdentifier: String?, model: MarkerModel, tapAction: @escaping ((MarkerModel) -> Void)) {
         self.model = model
+        self.tapAction = tapAction
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         setupView()
+        addTapGesture()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -23,34 +26,75 @@ class CustomMarkerView: MKAnnotationView {
     }
 
     private func setupView() {
-        let imageSize: CGFloat = 30
-        let paddingSize: CGFloat = 3
+        let imageSize: CGFloat = 40
+        let backgroundSize: CGFloat = imageSize + 10 // Add padding for the background
 
-        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: imageSize + (paddingSize * 2), height: imageSize + (paddingSize * 2)))
-        containerView.backgroundColor = .green
-        containerView.layer.cornerRadius = (imageSize + 6) / 2
-        containerView.layer.masksToBounds = true
-        containerView.layer.borderColor = UIColor.black.cgColor
-        containerView.layer.borderWidth = 1
+        // Create a container view for the background
+        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: backgroundSize, height: backgroundSize))
+        backgroundView.backgroundColor = UIColor.systemGray // Use system color
+        backgroundView.layer.cornerRadius = backgroundSize / 2 // Make it circular
+        backgroundView.layer.masksToBounds = true // Clip the edges to the bounds
+        backgroundView.layer.borderColor = UIColor.white.cgColor
+        backgroundView.layer.borderWidth = 2
 
-        let imageView = UIImageView(image: UIImage(named: "image_plogging"))
-        imageView.frame = CGRect(x: paddingSize, y: paddingSize, width: imageSize, height: imageSize)
-        imageView.layer.cornerRadius = imageSize / 2
-        imageView.layer.masksToBounds = true
-        containerView.addSubview(imageView)
+        // Center the background view
+        backgroundView.center = CGPoint(x: backgroundSize / 2, y: backgroundSize / 2)
+        addSubview(backgroundView)
 
-        addSubview(containerView)
+        
+      
+        
+        switch(model.image.starts(with: "http") || model.image.starts(with: "https")){
+        case true :
+            // Create the image view
+            
+            if let imageUrl = URL(string: model.image) {
+                URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                    guard let data = data, error == nil else {
+                        print("이미지 다운로드 실패: \(error?.localizedDescription ?? "알 수 없는 오류")")
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        guard let downloadedImage = UIImage(data: data) else {
+                            print("이미지 생성 실패")
+                            return
+                        }
+                        
+                        let imageView = UIImageView(image: downloadedImage)
+                        imageView.frame = CGRect(x: (backgroundSize - imageSize) / 2, y: (backgroundSize - imageSize) / 2, width: imageSize, height: imageSize)
+                        imageView.layer.cornerRadius = imageSize / 2 // Make the image circular
+                        imageView.layer.masksToBounds = true // Clip the image edges
+                        imageView.tintColor = UIColor.systemGray6 // Apply tint color to image
+                        backgroundView.addSubview(imageView) // 다운로드 후 추가
+                    }
+                }.resume()
+            }
+        case false :
+            // Create the image view
+            let imageView = UIImageView(image: UIImage(named: model.image)?.withRenderingMode(.alwaysTemplate))
+            imageView.frame = CGRect(x: (backgroundSize - imageSize) / 2, y: (backgroundSize - imageSize) / 2, width: imageSize, height: imageSize)
+            imageView.layer.cornerRadius = imageSize / 2 // Make the image circular
+            imageView.layer.masksToBounds = true // Clip the image edges
+            imageView.tintColor = UIColor.systemGray6 // Apply tint color to image
+            
+            // Add the imageView to the background
+            backgroundView.addSubview(imageView)
+        }
 
-        let titleLabel = UILabel()
-        titleLabel.text = model.title
-        titleLabel.textAlignment = .center
-        titleLabel.font = UIFont.systemFont(ofSize: 12)
-        titleLabel.textColor = .black
-        titleLabel.backgroundColor = .white
-        titleLabel.sizeToFit()
-        titleLabel.frame = CGRect(x: -(imageSize / 2), y: imageSize + (paddingSize * 2), width: titleLabel.frame.width + 10, height: titleLabel.frame.height + 5)
+       
 
-        addSubview(titleLabel)
-        frame = CGRect(x: 0, y: 0, width: containerView.frame.width, height: imageSize + titleLabel.frame.height)
+        // Set the frame for the marker view
+        frame = CGRect(x: 0, y: 0, width: backgroundSize, height: backgroundSize)
+    }
+
+    private func addTapGesture() {
+        // Add a tap gesture recognizer to handle click events
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.isUserInteractionEnabled = true // Enable user interaction
+        self.addGestureRecognizer(tapGesture)
+    }
+
+    @objc private func handleTap() {
+        tapAction(model) // Execute the tap action closure when tapped
     }
 }

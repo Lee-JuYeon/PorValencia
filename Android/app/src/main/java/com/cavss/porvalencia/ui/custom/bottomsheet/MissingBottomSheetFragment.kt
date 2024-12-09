@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.cavss.porvalencia.databinding.SheetMissingBinding
-import com.cavss.porvalencia.model.missing.MissingDTO
+import com.cavss.porvalencia.model.map.MissingDTO
 import com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 

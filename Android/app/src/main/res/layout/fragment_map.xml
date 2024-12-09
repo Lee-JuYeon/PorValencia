@@ -7,23 +7,35 @@
 
     </data>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="end"
+        android:background="?attr/mainThemeColour">
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/notification"
+            android:src="@drawable/image_notification"
+            android:background="@null"
+            android:importantForAccessibility="no" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/tag"/>
 
         <org.osmdroid.views.MapView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/map"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:id="@+id/tag"/>
-
-    </RelativeLayout>
+    </LinearLayout>
 </layout>

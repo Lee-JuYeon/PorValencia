@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct UserModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    UserModel()
+struct UserModel : Hashable {
+    var uid : String
+    var selfieURL : String
+    var name : String
+    var socialMedia : [String : String]?
+    
+    let address : String? = nil// 주소
+    let lat: Double? = nil// 위도 경도
+    let long: Double? = nil// 위도 경도
+    let sickness : String? = nil// 아픈 증상 ( 전염병, 보건소 의약품 찾기 )
+    let needs : String? = nil// 필요한 구호물품 (생리대, 물 등)
 }

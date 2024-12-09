@@ -7,13 +7,8 @@
         android:title="@string/bottomnavi_map" />
 
     <item
-        android:id="@+id/fragment_volunteer"
-        android:icon="@drawable/image_volunteer"
-        android:title="@string/bottomnavi_volunteer" />
-
-    <item
-        android:id="@+id/fragment_missing"
-        android:icon="@drawable/image_missing"
-        android:title="@string/bottomnavi_missing" />
+        android:id="@+id/fragment_profile"
+        android:icon="@drawable/image_profile"
+        android:title="@string/bottomnavi_profile" />
 
 </menu>

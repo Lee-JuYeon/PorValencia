@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct MissingModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+struct MissingModel: Hashable {
+    var uid : String
+    var requestFamilyUID : String? = nil
+    var missingState : MissingType = MissingType.MISSING
+    var name : String
+    var date : Date
+    var zone : String
+    var imageURL : String
+    var gender : GenderType
+    var character : String
+    var lon : Double
+    var lat : Double
 }
 
-#Preview {
-    MissingModel()
-}

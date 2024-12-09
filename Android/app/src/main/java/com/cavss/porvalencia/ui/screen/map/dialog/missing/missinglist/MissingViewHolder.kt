@@ -1,4 +1,4 @@
-package com.cavss.porvalencia.ui.screen.map.dialog.missinglist
+package com.cavss.porvalencia.ui.screen.map.dialog.missing.missinglist
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

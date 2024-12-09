@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct Routeview : Hashable {
+struct RouteModel : Hashable {
     var uid : String
     var title : String
-    var lon : Double
-    var lat : Double
     var address : String
+    var paths : [PathModel]
 }
+

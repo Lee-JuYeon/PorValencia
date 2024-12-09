@@ -4,9 +4,12 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="mainThemeColour">#2f4574</item> <!-- 메인컬러 -->
-        <item name="mainThemeColourLight">#98bad5</item> <!-- 메인컬러 밝은색 -->
-        <item name="bottomNaviTextColour">#000000</item> <!-- 바텀 네비게이션 텍스트 컬러 -->
+        <item name="mainThemeColour">#ecf0f4</item> <!-- 메인컬러 -->
+        <item name="leftShadowColour">#ffffff</item> <!-- 메인컬러기준 밝은 그림자 -->
+        <item name="rightShadowColour">#d2dae7</item> <!-- 메인컬러기준 어두운 그림자 -->
+
+        <item name="textColour">#000000</item>
+        <item name="bottomNaviTextColour">#000000</item>  <!-- 바텀 네비게이션 텍스트 컬러 -->
         <item name="backgroundColour">#ffffff</item>
 
         <item name="systemGray">#e6e5e9</item> <!-- 밝은 회색 -->

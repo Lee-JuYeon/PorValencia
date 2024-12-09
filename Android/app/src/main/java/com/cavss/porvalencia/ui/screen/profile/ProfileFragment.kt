@@ -1,31 +1,24 @@
-package com.cavss.porvalencia.dummy
+package com.cavss.porvalencia.ui.screen.profile
 
 import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
-import com.cavss.porvalencia.R
-import com.cavss.porvalencia.databinding.ActivityMainBinding
-import com.cavss.porvalencia.databinding.ActivityMissingAddBinding
-import com.cavss.porvalencia.vm.GroupingVM
-import com.cavss.porvalencia.vm.MissingVM
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.cavss.porvalencia.databinding.FragmentProfileBinding
 
-class MissingAddActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMissingAddBinding
+class ProfileFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private var _binding : FragmentProfileBinding? = null
+    private val binding get() = _binding!!
 
-        // Data Binding을 사용하여 레이아웃 설정
-        binding = ActivityMissingAddBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

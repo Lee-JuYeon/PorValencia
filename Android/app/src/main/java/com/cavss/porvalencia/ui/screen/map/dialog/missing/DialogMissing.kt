@@ -1,24 +1,17 @@
-package com.cavss.porvalencia.ui.screen.map.dialog
+package com.cavss.porvalencia.ui.screen.map.dialog.missing
 
 import android.app.Dialog
 import android.content.Context
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
-import android.widget.EditText
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.cavss.porvalencia.R
 import com.cavss.porvalencia.databinding.DialogMissingBinding
-import com.cavss.porvalencia.model.map.HospitalDTO
 import com.cavss.porvalencia.model.map.MissingDTO
-import com.cavss.porvalencia.ui.custom.bottomsheet.MissingBottomSheetFragment
 import com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener
-import com.cavss.porvalencia.ui.screen.map.dialog.missinglist.MissingAdapter
-import com.cavss.porvalencia.ui.screen.map.sheet.chart.ChartModel
-import com.cavss.porvalencia.vm.MissingVM
+import com.cavss.porvalencia.ui.screen.map.dialog.missing.missinglist.MissingAdapter
 
 class DialogMissing(
     context: Context,

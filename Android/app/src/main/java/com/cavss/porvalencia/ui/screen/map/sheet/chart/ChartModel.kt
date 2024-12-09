@@ -1,9 +1,9 @@
-package com.cavss.porvalencia.ui.custom.chart
+package com.cavss.porvalencia.ui.screen.map.sheet.chart
 
 data class ChartModel(
-    var id : String,
+    var uid : String,
     var title : String,
-    var text : String
+    var contents : String
 ){
 
 }

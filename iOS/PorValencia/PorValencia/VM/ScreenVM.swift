@@ -7,12 +7,16 @@
 
 import SwiftUI
 
-struct ScreenVM: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class ScreenVM: ObservableObject {
+    
+    enum SheetType {
+        case GodLifeCell
     }
-}
-
-#Preview {
-    ScreenVM()
+    
+    enum ScreenType {
+        case MainView
+    }
+    
+    @Published var pageIndex : Int = 0
+    
 }

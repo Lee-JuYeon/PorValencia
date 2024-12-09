@@ -7,12 +7,11 @@
 
 import SwiftUI
 
-struct HelpMeModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    HelpMeModel()
+struct HelpMeModel: Hashable {
+    var uid : String
+    var address : String
+    var lon : Double
+    var lat : Double
+    var userUID : String
+    var text : String
 }

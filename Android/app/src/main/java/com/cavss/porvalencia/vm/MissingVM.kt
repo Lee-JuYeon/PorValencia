@@ -5,10 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.cavss.porvalencia.model.missing.MissingDTO
-import com.cavss.porvalencia.model.volunteer.group.GroupDTO
+import com.cavss.porvalencia.model.map.MissingDTO
 import com.cavss.porvalencia.repository.missing.MissingRepository
-import com.cavss.porvalencia.repository.volunteer.GroupRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

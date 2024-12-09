@@ -1,17 +1,19 @@
-package com.cavss.porvalencia.model.missing
+package com.cavss.porvalencia.model.map
 
 import com.cavss.porvalencia.type.MissingType
 import java.util.Date
 
 data class MissingDTO (
-    val uid : String,
-    val name : String,
-    val imageURL : String,
-    val date : Date,
-    val location : String,
-    val gender : String,
-    val character : String,
-    val state : MissingType = MissingType.MISSING
+    var uid : String,
+    var name : String,
+    var imageURL : String,
+    var date : Date,
+    var location : String,
+    var gender : String,
+    var character : String,
+    var state : MissingType = MissingType.MISSING,
+    var lat : Double?,
+    var lon : Double?
 ){
 }
 

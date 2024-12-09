@@ -9,6 +9,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.cavss.porvalencia.databinding.ActivityMainBinding
 import com.cavss.porvalencia.vm.GroupingVM
+import com.cavss.porvalencia.vm.MapVM
 import com.cavss.porvalencia.vm.MissingVM
 
 class MainActivity : AppCompatActivity() {
@@ -36,10 +37,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var groupVM : GroupingVM
     private lateinit var missingVM : MissingVM
+    private lateinit var mapVM : MapVM
     private fun setVM(){
         try{
             groupVM = ViewModelProvider(this@MainActivity)[GroupingVM::class.java]
             missingVM = ViewModelProvider(this@MainActivity)[MissingVM::class.java]
+            mapVM = ViewModelProvider(this@MainActivity)[MapVM::class.java]
         }catch (e:Exception){
             Log.e("mException", "MainActivity, setVM // Exception : ${e.localizedMessage}")
         }

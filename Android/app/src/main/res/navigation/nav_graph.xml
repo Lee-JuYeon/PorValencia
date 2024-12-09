@@ -18,10 +18,10 @@
         android:label="@string/bottomnavi_volunteer"/>
 
     <fragment
-        android:id="@+id/fragment_missing"
-        android:name="com.cavss.porvalencia.ui.screen.missing.MissingFragment"
-        android:layout="@layout/fragment_missing"
-        android:label="@string/bottomnavi_missing"/>
+        android:id="@+id/fragment_profile"
+        android:name="com.cavss.porvalencia.ui.screen.profile.ProfileFragment"
+        android:layout="@layout/fragment_profile"
+        android:label="@string/bottomnavi_profile"/>
 
 
 </navigation>

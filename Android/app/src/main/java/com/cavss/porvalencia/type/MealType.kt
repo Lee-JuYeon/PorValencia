@@ -1,4 +1,9 @@
 package com.cavss.porvalencia.type
 
-class MealType {
+enum class MealType {
+    BREAKFAST,
+    MID_MORNING_SNACK,
+    LUNCH,
+    AFTERNOON_SNACK,
+    DINNER
 }

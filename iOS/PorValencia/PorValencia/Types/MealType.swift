@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct MealType: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    MealType()
+enum MealType {
+    case BREAKFAST
+    case MID_MORNING_SNACK
+    case LUNCH
+    case AFTERNOON_SNACK
+    case DINNER
 }

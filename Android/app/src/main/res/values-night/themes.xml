@@ -4,8 +4,11 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
 
-        <item name="mainThemeColour">#2f4574</item> <!-- 메인컬러 -->
-        <item name="mainThemeColourLight">#98bad5</item> <!-- 메인컬러 밝은색 -->
+        <item name="mainThemeColour">#363a3f</item> <!-- 메인컬러 -->
+        <item name="leftShadowColour">#5f6571</item> <!-- 메인컬러기준 밝은 그림자 -->
+        <item name="rightShadowColour">#1a1c1f</item> <!-- 메인컬러기준 어두운 그림자 -->
+
+        <item name="textColour">#000000</item>
         <item name="bottomNaviTextColour">#ffffff</item> <!-- 바텀 네비게이션 텍스트 컬러 -->
         <item name="backgroundColour">#000000</item>
 

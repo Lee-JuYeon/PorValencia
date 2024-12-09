@@ -4,11 +4,11 @@
 
     <data>
         <import type="com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener"/>
-        <import type="com.cavss.porvalencia.model.missing.MissingDTO"/>
+        <import type="com.cavss.porvalencia.model.map.MissingDTO"/>
 
         <variable
             name="model"
-            type="com.cavss.porvalencia.model.missing.MissingDTO" />
+            type="com.cavss.porvalencia.model.map.MissingDTO" />
 
         <variable
             name="listener"
@@ -22,7 +22,7 @@
         android:layout_margin="2dp"
         android:padding="2dp"
         android:background="@drawable/backgroun_tag"
-        android:backgroundTint="?attr/mainThemeColourLight"
+        android:backgroundTint="?attr/leftShadowColour"
         android:id="@+id/background_border"
         android:onClick="@{() -> listener.onClick(model)}">
 

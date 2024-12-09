@@ -1,4 +1,8 @@
 package com.cavss.porvalencia.singleton
 
-class MapManager {
+object MapManager {
+    fun changeMarkerFromHospitalList(){
+
+    }
+
 }

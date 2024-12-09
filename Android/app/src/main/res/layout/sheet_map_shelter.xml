@@ -1,4 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
-  
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.cavss.porvalencia.ui.custom.recyclerview.OnViewHolderClickListener"/>
+        <import type="com.cavss.porvalencia.model.map.ShelterDTO"/>
+
+        <variable
+            name="model"
+            type="com.cavss.porvalencia.model.map.ShelterDTO" />
+
+        <variable
+            name="listener"
+            type="OnViewHolderClickListener&lt;ShelterDTO&gt;" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@drawable/backgroun_tag"
+        android:backgroundTint="?attr/leftShadowColour"
+        android:id="@+id/background_border"
+        android:onClick="@{() -> listener.onClick(model)}">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{model.title}"
+            android:textSize="20sp"
+            android:textColor="?attr/textColour"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_gravity="start"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="?attr/textColour"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:layout_gravity="start"
+            app:location="@{model.address}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="?attr/textColour"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:layout_gravity="start"
+            app:isEnterable="@{model.isEnterable}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="?attr/textColour"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:layout_gravity="start"
+            app:peopleState="@{model}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:textColor="?attr/textColour"
+            android:textStyle="normal"
+            android:textAllCaps="false"
+            android:layout_gravity="start"
+            app:call="@{model.call}"/>
+
+
+    </LinearLayout>
 </layout>

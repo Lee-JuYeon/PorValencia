@@ -13,5 +13,8 @@ struct HospitalModel: Hashable {
     var hospitalAddress : String
     var hospitalLon : Double
     var hospitalLat : Double
+    var maxBed: Int?
+    var currentBed : Int?
+    var call : String
 }
 

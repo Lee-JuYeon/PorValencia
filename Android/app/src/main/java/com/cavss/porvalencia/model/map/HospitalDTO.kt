@@ -1,10 +1,12 @@
 package com.cavss.porvalencia.model.map
 
 data class HospitalDTO(
-    val id: String,
-    val name: String,
-    val latitude: Double,
-    val longitude: Double,
-    val emergencyCapacity: Int, // 응급 환자 수용 가능 인원
-    val contactInfo: String     // 연락처 정보
+    var id: String,
+    var title: String,
+    var address : String,
+    var latitude: Double,
+    var longitude: Double,
+    var maxBed: Int?, // 응급 환자 수용 가능 인원
+    var currentBed : Int?, //현재 병상 차지하는
+    var call: String     // 연락처 정보
 )

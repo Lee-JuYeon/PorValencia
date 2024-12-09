@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct GradientText: View {
+    var text: String
+    var gradientColors: [Color]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(text)
+            .font(.largeTitle)
+            .fontWeight(.bold)
+            .foregroundColor(.clear) // 텍스트 색상을 투명하게 설정
+            .overlay(
+                LinearGradient(
+                    gradient: Gradient(colors: gradientColors),
+                    startPoint: .leading,
+                    endPoint: .trailing
+                )
+                .mask(
+                    Text(text)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                )
+            )
     }
-}
-
-#Preview {
-    GradientText()
 }

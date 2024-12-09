@@ -7,12 +7,7 @@
 
 import SwiftUI
 
-struct ChartModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    ChartModel()
+struct ChartModel {
+    let title : String
+    let value : String
 }

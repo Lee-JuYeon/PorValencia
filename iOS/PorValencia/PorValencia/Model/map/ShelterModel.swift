@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct ShelterModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-#Preview {
-    ShelterModel()
+struct ShelterModel: Hashable {
+    var uid : String
+    var title : String
+    var address : String
+    var lon : Double
+    var lat : Double
+    var maxBed : Int
+    var currentBed : Int
+    var isEnterable : Bool
+    var call : String
 }
