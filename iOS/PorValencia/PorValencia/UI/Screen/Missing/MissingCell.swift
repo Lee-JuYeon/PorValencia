@@ -63,6 +63,9 @@ struct MissingCell : View {
 
             Text("📆 \(MissingManager.shared.getDateByString(setDate: model.date))")
                 .font(.system(size: 20,weight: Font.Weight.light))
+            
+            Text("Las coordenadas de latitud y longitud son una ubicación estimada.")
+                .font(.system(size: 20,weight: Font.Weight.light))
         }
         .onTapGesture {
             getOnClick(model)

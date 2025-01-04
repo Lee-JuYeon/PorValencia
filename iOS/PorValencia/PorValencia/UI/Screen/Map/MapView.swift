@@ -176,6 +176,9 @@ struct MapView: View {
                         .frame(maxWidth: .infinity, maxHeight: 400)
                         
                         ChartView(chartData: chartList)
+                        Text("Las coordenadas de latitud y longitud son una ubicación estimada.")
+                            .font(.system(size: 20,weight: Font.Weight.light))
+                        
                         
                     }
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
